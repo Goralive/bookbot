@@ -1,10 +1,11 @@
 def main():
     book_path = "books/frankenstein.txt"
     text = text_content_as_string(book_path)
-    print(text)
-    print(f"Size of text is: {count_words(text)}")
-    letters = count_letters(text)
-    print(letters)
+    words = count_words(text)
+    print(f"--- Begin report of {book_path} ---")
+    print(f"{words} words found in the document")
+    # foreach through list of list_of_dict
+    print("--- End report ---")
 
 
 def text_content_as_string(path):
@@ -25,7 +26,8 @@ def count_letters(text):
             chars[char] += 1
         else:
             chars[char] = 1
-    return chars
+    list_of_dict = list(chars.items())
+    return list_of_dict
 
 
 main()
